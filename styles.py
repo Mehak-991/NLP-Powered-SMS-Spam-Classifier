@@ -5,9 +5,9 @@ def get_css():
 
     /* Global settings */
     .stApp {
-        background: radial-gradient(circle at 10% 20%, rgb(14, 26, 64) 0%, rgb(4, 11, 23) 90%) !important;
+        background: #f8fafc !important;
         font-family: 'Outfit', sans-serif !important;
-        color: #e2e8f0;
+        color: #1e293b;
     }
     
     /* Hide top bar and footer elements of Streamlit */
@@ -31,41 +31,41 @@ def get_css():
         font-size: 2.8rem;
         font-weight: 700;
         margin: 0;
-        background: linear-gradient(135deg, #a8c0ff 0%, #3f2b96 100%);
+        background: linear-gradient(135deg, #1e3a8a 0%, #4338ca 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        text-shadow: 0px 4px 12px rgba(63, 43, 150, 0.4);
+        text-shadow: 0px 4px 12px rgba(67, 56, 202, 0.15);
     }
     .header-container p {
         font-size: 1.1rem;
-        color: #94a3b8;
+        color: #475569;
         margin-top: 0.5rem;
-        font-weight: 300;
+        font-weight: 400;
     }
 
     /* Main Card Layout */
     .main-card {
-        background: rgba(15, 23, 42, 0.4);
+        background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.05);
         border-radius: 20px;
         padding: 2.5rem;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
         animation: fadeInUp 0.8s ease-out;
     }
 
     /* Text Area */
     .stTextArea textarea {
-        background: rgba(0, 0, 0, 0.25) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        background: #ffffff !important;
+        border: 1px solid #cbd5e1 !important;
         border-radius: 12px !important;
-        color: #f8fafc !important;
+        color: #334155 !important;
         font-size: 1.05rem !important;
         padding: 1.2rem !important;
         transition: all 0.3s ease !important;
         font-family: 'Outfit', sans-serif !important;
-        box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.02);
     }
     .stTextArea textarea:focus {
         border-color: #6366f1 !important;
@@ -73,7 +73,7 @@ def get_css():
         outline: none !important;
     }
     .stTextArea textarea::placeholder {
-        color: #64748b !important;
+        color: #94a3b8 !important;
     }
 
     /* Form Submit Button */
@@ -87,11 +87,11 @@ def get_css():
         font-size: 1.1rem !important;
         padding: 0.7rem 1.5rem !important;
         transition: all 0.3s ease !important;
-        box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.4) !important;
+        box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.3) !important;
     }
     [data-testid="stFormSubmitButton"] button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 15px 35px -5px rgba(124, 58, 237, 0.6) !important;
+        box-shadow: 0 15px 35px -5px rgba(124, 58, 237, 0.45) !important;
     }
     [data-testid="stFormSubmitButton"] button:active {
         transform: translateY(1px);
@@ -106,37 +106,37 @@ def get_css():
         animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     .result-box.spam-box {
-        background: rgba(239, 68, 68, 0.1);
-        border: 1px solid rgba(239, 68, 68, 0.3);
+        background: rgba(254, 226, 226, 0.7);
+        border: 1px solid rgba(248, 113, 113, 0.4);
     }
     .result-box.spam-box h3 {
-        color: #fca5a5;
+        color: #991b1b;
         margin: 0.5rem 0;
         font-size: 1.5rem;
     }
-    .result-box.spam-box p { color: #f87171; margin: 0; }
+    .result-box.spam-box p { color: #dc2626; margin: 0; }
     
     .result-box.ham-box {
-        background: rgba(34, 197, 94, 0.1);
-        border: 1px solid rgba(34, 197, 94, 0.3);
+        background: rgba(220, 252, 231, 0.7);
+        border: 1px solid rgba(74, 222, 128, 0.4);
     }
     .result-box.ham-box h3 {
-        color: #bbf7d0;
+        color: #166534;
         margin: 0.5rem 0;
         font-size: 1.5rem;
     }
-    .result-box.ham-box p { color: #86efac; margin: 0; }
+    .result-box.ham-box p { color: #15803d; margin: 0; }
 
     .result-box.warning-box {
-        background: rgba(234, 179, 8, 0.1);
-        border: 1px solid rgba(234, 179, 8, 0.3);
+        background: rgba(254, 249, 195, 0.7);
+        border: 1px solid rgba(250, 204, 21, 0.4);
     }
     .result-box.warning-box h3 {
-        color: #fef08a;
+        color: #854d0e;
         margin: 0.5rem 0;
         font-size: 1.5rem;
     }
-    .result-box.warning-box p { color: #fde047; margin: 0; }
+    .result-box.warning-box p { color: #a16207; margin: 0; }
 
     .icon {
         font-size: 3rem;
@@ -149,7 +149,7 @@ def get_css():
         margin-top: 3rem;
         font-size: 0.85rem;
         color: #64748b;
-        font-weight: 300;
+        font-weight: 400;
     }
 
     /* Animations */

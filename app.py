@@ -81,7 +81,7 @@ with st.form("spam_detector_form", clear_on_submit=False):
     
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        submit_button = st.form_submit_button("Analyze Message", use_container_width=True)
+        submit_button = st.form_submit_button("Let's Predict", use_container_width=True)
 
 if submit_button:
     if not sms_input.strip():
@@ -93,26 +93,30 @@ if submit_button:
         """, unsafe_allow_html=True)
     else:
         if tfidf and model:
-            cleaned = clean_text(sms_input)
-            vector = tfidf.transform([cleaned])
-            res = model.predict(vector)[0]
-            
-            if res == 1:
-                st.markdown("""
-                <div class="result-box spam-box">
-                    <div class="icon">🚫</div>
-                    <h3>Spam Detected</h3>
-                    <p>This message looks like a spam or promotional message.</p>
-                </div>
-                """, unsafe_allow_html=True)
-            else:
-                st.markdown("""
-                <div class="result-box ham-box">
-                    <div class="icon">✅</div>
-                    <h3>Safe Message</h3>
-                    <p>This message appears to be legitimate.</p>
-                </div>
-                """, unsafe_allow_html=True)
+            try:
+                cleaned = clean_text(sms_input)
+                # Transform using the loaded vectorizer and convert to dense array
+                vector = tfidf.transform([cleaned]).toarray()
+                res = model.predict(vector)[0]
+                
+                if res == 1:
+                    st.markdown("""
+                    <div class="result-box spam-box">
+                        <div class="icon">🚫</div>
+                        <h3>Spam</h3>
+                        <p>This message looks like a spam or promotional message.</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+                else:
+                    st.markdown("""
+                    <div class="result-box ham-box">
+                        <div class="icon">✅</div>
+                        <h3>Not Spam</h3>
+                        <p>This message appears to be legitimate.</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+            except Exception as e:
+                st.error(f"Prediction Error: {e}")
 
 st.markdown('</div>', unsafe_allow_html=True)
 
