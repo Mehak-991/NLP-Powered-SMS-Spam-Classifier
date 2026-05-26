@@ -109,7 +109,3 @@ This project is provided under the MIT License — add a `LICENSE` file to publi
 ## Contact
 
 Questions, issues or feature requests: missmehak755@gmail.com
-
----
-
-If you want, I can also add a `LICENSE` file (MIT) and a minimal `Dockerfile` for containerized runs. Would you like me to add those now?
