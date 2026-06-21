@@ -28,13 +28,12 @@ def get_css():
         animation: fadeInDown 0.8s ease-out;
     }
     .header-container h1 {
-        font-size: 2.8rem;
-        font-weight: 700;
+        font-size: 3rem;
+        font-weight: 800;
         margin: 0;
-        background: linear-gradient(135deg, #1e3a8a 0%, #4338ca 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 0px 4px 12px rgba(67, 56, 202, 0.15);
+        color: #1e3a8a; /* Solid visible color */
+        line-height: 1.2;
+        padding-bottom: 0.5rem;
     }
     .header-container p {
         font-size: 1.1rem;
@@ -76,25 +75,41 @@ def get_css():
         color: #94a3b8 !important;
     }
 
-    /* Form Submit Button */
-    [data-testid="stFormSubmitButton"] button {
-        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%) !important;
-        color: white !important;
-        border: none !important;
+    /* Buttons Layout */
+    .button-container {
+        display: flex;
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    /* Primary and Secondary Buttons */
+    .stButton button {
         border-radius: 12px !important;
         font-family: 'Outfit', sans-serif !important;
         font-weight: 600 !important;
-        font-size: 1.1rem !important;
-        padding: 0.7rem 1.5rem !important;
+        font-size: 1rem !important;
+        padding: 0.6rem 1.2rem !important;
         transition: all 0.3s ease !important;
-        box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.3) !important;
+        width: 100% !important;
     }
-    [data-testid="stFormSubmitButton"] button:hover {
+
+    /* Predict Button Specific */
+    div.stButton > button:first-child[kind="primary"] {
+        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%) !important;
+        color: white !important;
+        border: none !important;
+        box-shadow: 0 8px 20px -5px rgba(124, 58, 237, 0.3) !important;
+    }
+
+    /* Reset Button Specific */
+    div.stButton > button:first-child[kind="secondary"] {
+        background: #f1f5f9 !important;
+        color: #475569 !important;
+        border: 1px solid #cbd5e1 !important;
+    }
+    
+    div.stButton > button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 15px 35px -5px rgba(124, 58, 237, 0.45) !important;
-    }
-    [data-testid="stFormSubmitButton"] button:active {
-        transform: translateY(1px);
     }
 
     /* Result Boxes */
